@@ -8,34 +8,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".TodoActivity" >
 
+    <ListView
+        android:id="@+id/lvToDoList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnAddItem"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+    </ListView>
+
     <EditText
-        android:id="@+id/editList"
+        android:id="@+id/etNewItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="@string/newItemHint" >
 
         <requestFocus />
     </EditText>
 
     <Button
-        android:id="@+id/addItem"
+        android:id="@+id/btnAddItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:onClick="onAddItem"
+        android:layout_alignBaseline="@+id/etNewItem"
+        android:layout_alignBottom="@+id/etNewItem"
+        android:layout_toRightOf="@+id/etNewItem"
+        android:onClick="addNewItem"
         android:text="Add" />
-
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/addButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
-
-    </ListView>
 
 </RelativeLayout>
